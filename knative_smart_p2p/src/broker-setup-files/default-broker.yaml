@@ -1,0 +1,7 @@
+# on this broker events from kafka will be send and
+# remember to bind them using apache camel binding
+
+apiVersion: eventing.knative.dev/v1
+kind: broker
+metadata:
+ name: default

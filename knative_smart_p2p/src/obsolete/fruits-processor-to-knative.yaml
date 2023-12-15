@@ -1,0 +1,20 @@
+# this binding will send events from kafka to knative broker
+
+apiVersion: camel.apache.org/v1alpha1
+kind: KameletBinding
+metadata:
+  name: fruits-processor-to-knative
+spec:
+  source:
+    ref:
+      kind: Kamelet
+      apiVersion: camel.apache.org/v1alpha1
+      name: fruits-processor  # change this name of a service to be used as a source
+    properties:
+      topic: "fruits" # change this topic name to be used as a source
+      brokers: "my-cluster-kafka-bootstrap.kafka:9092"
+  sink:
+    ref:
+      kind: Broker
+      apiVersion: eventing.knative.dev/v1
+      name: default

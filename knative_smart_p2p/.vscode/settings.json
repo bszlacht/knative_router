@@ -1,0 +1,5 @@
+{
+    "yaml.schemas": {
+        "kubernetes://schema/v1%40service": "file:///home/bsz/Repositories/knative_smart_p2p/src/broker/fruit-events-display.yaml"
+    }
+}
